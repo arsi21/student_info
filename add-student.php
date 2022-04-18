@@ -11,26 +11,48 @@
     <title>Student Information</title>
 </head>
 <body>
-   <form action="add.php" method="post">
-       <label for="fname-input">First Name</label>
-       <input id="fname-input" type="text" name="fname">
+    <div class="container-md">
+        <form action="add.php" method="post">
+            <div class="row mb-3">
+                <label for="fname-input">First Name</label>
+                <div class="col-sm-10">
+                    <input id="fname-input" type="text" name="fname">
+                </div>
+            </div>
 
-       <label for="lname-input">Last Name</label>
-       <input id="lname-input" type="text" name="lname">
+            <div class="row mb-3">
+                <label for="lname-input">Last Name</label>
+                <div class="col-sm-10">
+                    <input id="lname-input" type="text" name="lname">
+                </div>
+            </div>
 
-       <label for="gender-input">Gender</label>
-       <select name="gender" id="gender-input">
-           <option value="Male">Male</option>
-           <option value="Female">Female</option>
-       </select>
+            <div class="row mb-3">
+                <label for="gender-input">Gender</label>
+                <div class="col-sm-10">
+                    <select name="gender" id="gender-input">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+            </div>
 
-       <label for="grade-input">Grade Level</label>
-       <input id="grade-input" type="number" name="grade">
+            <div class="row mb-3">
+                <label for="grade-input">Grade Level</label>
+                <div class="col-sm-10">
+                    <input id="grade-input" type="number" name="grade">
+                </div>
+            </div>
 
-       <label for="bday-input">Birhtday</label>
-       <input id="bday-input" type="date" name="bday">
+            <div class="row mb-3">
+                <label for="bday-input">Birhtday</label>
+                <div class="col-sm-10">
+                    <input id="bday-input" type="date" name="bday">
+                </div>
+            </div>
 
-       <input type="submit" name="submit" value="Submit Form">
-   </form>
+            <input type="submit" name="submit" class="btn btn-primary" value="Submit Form">
+        </form>
+    </div>
 </body>
 </html>

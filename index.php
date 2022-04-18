@@ -20,30 +20,32 @@ $result = $conn->query($sql);
     <title>Student Information</title>
 </head>
 <body>
-    <h1>Student Information</h1>
-    <br>
-    <br>
+    <div class="container">
+        <h1>Student Information</h1>
 
-    <a href="add-student.php">Add New</a>
+        <a href="add-student.php" class="btn btn-primary btn-sm">Add New</a>
+    </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-            </tr>
-        </thead>
-    
-        <tbody>
-    <?php //output data of each row
-    while($row = $result->fetch_assoc()) {?>
-            <tr>
-                <td><?php echo $row['first_name']; ?></td>
-                <td><?php echo $row['last_name']; ?></td>
-            </tr>
-    <?php }?>
-        </tbody>
-    </table>
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+            </thead>
+        
+            <tbody>
+        <?php //output data of each row
+        while($row = $result->fetch_assoc()) {?>
+                <tr>
+                    <td><?php echo $row['first_name']; ?></td>
+                    <td><?php echo $row['last_name']; ?></td>
+                </tr>
+        <?php }?>
+            </tbody>
+        </table>
+    </div>
 
 </body>
 </html>
