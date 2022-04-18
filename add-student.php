@@ -1,26 +1,4 @@
-<?php 
-
-include_once ("connections/conn.php");
-
-$conn = connection();
-
-if(isset($_POST['submit'])){
-
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
-    $gender = $_POST['gender'];
-    $grade = $_POST['grade'];
-    $bday = $_POST['bday'];
-
-    $sql = "INSERT INTO `student_info`(`first_name`, `last_name`, 
-    `gender`, `grade_level`, `birthday`) VALUES ('$fname', '$lname', '$gender', '$grade', '$bday')";
-
-    $conn->query($sql) or die ($conn->error);
-
-    echo header("Location: index.php");
-}
-
-?>
+<?php include_once ("add.php"); ?>
 
 
 <!DOCTYPE html>
@@ -29,10 +7,11 @@ if(isset($_POST['submit'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Student Information</title>
 </head>
 <body>
-   <form action="" method="post">
+   <form action="add.php" method="post">
        <label for="fname-input">First Name</label>
        <input id="fname-input" type="text" name="fname">
 
