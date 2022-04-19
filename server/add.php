@@ -1,6 +1,6 @@
 <?php 
 
-include_once ("partials/conn.php");
+include_once ("../server/conn.php");
 
 $conn = connection();
 
@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
 
     $conn->query($sql) or die ($conn->error);
 
-    echo header("Location: index.php");
+    echo header("Location: ../client/index.php");
 }
 
 ?>
