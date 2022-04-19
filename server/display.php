@@ -1,6 +1,6 @@
 <?php 
 //include connection
-include_once ("../server/connection.php");
+include_once ("connection.php");
 
 //start connection
 $con = connection();

@@ -1,3 +1,18 @@
+<?php 
+
+//check if you already login
+if(!isset($_SESSION)){
+    session_start();
+}
+
+if(isset($_SESSION['username'])){
+    echo "Welcome ".$_SESSION['username'];
+}else{
+    echo "Welcome Guest";
+}
+
+?>
+
 <!-- add server partials -->
 <?php include_once("../server/display.php")?>
 
@@ -9,6 +24,10 @@
         <h1 class="h3">Student List</h1>
 
         <a href="add-student.php" class="btn btn-primary btn-sm"  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add New Student">Add New</a>
+        
+        <?php if(isset($_SESSION['username'])){?>
+        <a href="../server/logout.php">Logout</a>
+        <?php }?>
     </div>
 
     <div class="container">

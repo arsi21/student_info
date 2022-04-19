@@ -1,3 +1,6 @@
+<!-- add server partials -->
+<?php include_once("../server/verify-login.php");?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,14 +10,14 @@
     <title>Login</title>
 </head>
 <body>
-    <form action="../server/verify-login" method="post">
+    <form action="" method="post">
         <label for="username">Username</label>
         <input type="text" id="username" name="username">
 
         <label for="password">Password</label>
         <input type="password" id="password" name="password">
 
-        <button type="submit">Login</button>
+        <button type="submit" name="login">Login</button>
     </form>
 </body>
 </html>
