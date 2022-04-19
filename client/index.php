@@ -34,6 +34,7 @@ if(isset($_SESSION['username'])){
         <table class="table table-hover">
             <thead>
                 <tr>
+                    <th>Action</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                 </tr>
@@ -43,6 +44,7 @@ if(isset($_SESSION['username'])){
         <?php //output data of each row
         while($row = $result->fetch_assoc()) {?>
                 <tr>
+                    <td><a href="details.php?id=<?php echo $row['id']?>">view</a></td>
                     <td><?php echo $row['first_name']; ?></td>
                     <td><?php echo $row['last_name']; ?></td>
                 </tr>
