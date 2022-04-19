@@ -1,12 +1,12 @@
 <?php 
 //include connection
-include_once ("../server/conn.php");
+include_once ("../server/connection.php");
 
 //start connection
-$conn = connection();
+$con = connection();
 
 //for displaying all the names
 $sql = "SELECT * FROM student_info ORDER BY id DESC";
-$result = $conn->query($sql);
+$result = $con->query($sql);
 
 ?>

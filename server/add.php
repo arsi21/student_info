@@ -1,9 +1,9 @@
 <?php 
 //include server partial file
-include_once ("../server/conn.php");
+include_once ("../server/connection.php");
 
 //start the connection
-$conn = connection();
+$con = connection();
 
 //check if the submit button is clicked
 if(isset($_POST['submit'])){
@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
     `gender`, `grade_level`, `birthday`) VALUES ('$fname', '$lname', '$gender', '$grade', '$bday')";
 
     //insert data into database
-    $conn->query($sql) or die ($conn->error);
+    $con->query($sql) or die ($con->error);
 
     //redirect to index.php
     header("Location: ../client/index.php");
