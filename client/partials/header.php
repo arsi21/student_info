@@ -15,17 +15,40 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="collapse navbar-collapse d-flex-md justify-content-between" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-                    <a class="nav-link" href="login.php">Login</a>
-                    <a class="nav-link" href="#">Signup</a>
+                    <form class="d-flex pl-2" action="result.php" method="get">
+                        <input class="form-control me-2" type="search" placeholder="Search" name="search">
+                        <button class="btn btn-outline-light" type="submit" name="searchBtn">Search</button>
+                    </form>
                 </div>
 
-                <form class="d-flex" action="result.php" method="get">
-                    <input class="form-control me-2" type="search" placeholder="Search" name="search">
-                    <button class="btn btn-outline-light" type="submit" name="searchBtn">Search</button>
-                </form>
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <?php //check if you already login
+                        if(!isset($_SESSION)){
+                            session_start();
+                        }
+
+                        if(isset($_SESSION['username'])){
+                            echo $_SESSION['username'];
+                        }else{
+                            echo "Guest";
+                        }
+                        ?>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <?php if(isset($_SESSION['username'])){?>
+                            <a class="dropdown-item" href="../server/logout.php">Logout</a>
+                            <?php }else{?>
+                            <a class="dropdown-item" href="login.php">Login</a>
+                            <a class="dropdown-item" href="signup.php">Signup</a>
+                            <?php }?>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </nav>
