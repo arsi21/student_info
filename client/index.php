@@ -23,7 +23,7 @@
     <div class="container">
         <h1 class="h3 my-3">Student List</h1>
 
-        <a href="add-student.php" class="btn btn-primary btn-sm"  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add New Student">Add New</a>
+        <button  class="btn btn-primary btn-sm"  data-bs-toggle="modal" data-bs-target="#addStudentModal">Add New</button>
     </div>
 
     <div class="container">
@@ -48,6 +48,58 @@
             </tbody>
         </table>
     </div>
+
+
+    <!-- Modal -->
+    <form action="../server/add.php" method="post">
+        <div class="modal fade" id="addStudentModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Student</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            
+                <div class="mb-3">
+                    <label for="fname-input" class="form-label">First Name</label>
+                    <input id="fname-input" type="text" class="form-control" name="fname">
+                </div>
+
+                <div class="mb-3">
+                    <label for="lname-input" class="form-label">Last Name</label>
+                    <input id="lname-input" type="text" class="form-control" name="lname">
+                </div>
+
+                <div class="mb-3">
+                    <label for="gender-input" class="form-label">Gender</label>
+                        <select name="gender" id="gender-input"  class="form-select">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="grade-input" class="form-label">Grade Level</label>
+                    <input id="grade-input" type="number" class="form-control" name="grade">
+                </div>
+
+                <div class="mb-3">
+                    <label for="bday-input" class="form-label">Birhtday</label>
+                    <input id="bday-input" type="date" class="form-control" name="bday">
+                </div>
+
+                <!-- <input type="submit" name="submit" class="btn btn-primary" value="Add Student"> -->
+            
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" name="submit">Add</button>
+            </div>
+            </div>
+        </div>
+        </div>
+    </form>
 
 
     
