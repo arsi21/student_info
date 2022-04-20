@@ -22,9 +22,9 @@
                     <a class="nav-link" href="#">Signup</a>
                 </div>
 
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-light" type="submit">Search</button>
+                <form class="d-flex" action="result.php" method="get">
+                    <input class="form-control me-2" type="search" placeholder="Search" name="search">
+                    <button class="btn btn-outline-light" type="submit" name="searchBtn">Search</button>
                 </form>
             </div>
         </div>
