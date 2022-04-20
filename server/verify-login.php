@@ -25,6 +25,8 @@ if(isset($_POST['login'])){
     if($total > 0){
         $_SESSION['username'] = $row['username'];
         $_SESSION['access'] = $row['access'];
+
+        //redirect to index.php
         header("Location: ../client/index.php");
     }else{
         echo "No username found!";
