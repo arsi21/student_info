@@ -20,12 +20,12 @@
                     <form action="" method="post">
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Username</span>
-                            <input type="text" class="form-control" name="username">
+                            <input type="text" class="form-control" name="username" required>
                         </div>
 
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Password</span>
-                            <input type="password" class="form-control" name="password">
+                            <input type="password" class="form-control" name="password" required>
                         </div>
 
                         <?php if(isset($errorMsg)){ echo $errorMsg;}?>
