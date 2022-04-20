@@ -6,7 +6,11 @@
 
     <div class="container">
         <a href="edit-student.php?id=<?php echo $row['id']?>">Edit</a>
-        <a href="">Delete</a>
+        
+        <form action="../server/delete.php" method="post">
+            <input type="hidden" value="<?php echo $row['id']?>" name="id">
+            <button type="submit" name="delete">Delete</button>
+        </form>
 
         <h2><?php echo $row['first_name']?> <?php echo $row['last_name']?></h2>
 
