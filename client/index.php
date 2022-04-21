@@ -23,7 +23,23 @@
     <div class="container">
         <h1 class="h3 my-3">Student List</h1>
 
+        <?php 
+        //start session
+        if(!isset($_SESSION)){
+            session_start();
+        }
+
+        //check if the user is guest
+        if(isset($_SESSION['username'])){
+            if($_SESSION['username'] == "admin" || $_SESSION['username'] == "regular"){
+        ?>
+        <!-- if not guest show add button -->
         <button  class="btn btn-primary btn-sm"  data-bs-toggle="modal" data-bs-target="#addStudentModal">Add New</button>
+        <?php
+            }
+        }
+        ?>
+        
     </div>
 
     <div class="container">
