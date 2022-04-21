@@ -1,16 +1,4 @@
 <?php 
-
-//check if you already login
-if(!isset($_SESSION)){
-    session_start();
-}
-
-if(isset($_SESSION['access']) && $_SESSION['access'] == "admin"){
-    echo "Welcome ".$_SESSION['username'];
-}else{
-    header("Location: index.php");
-}
-
 //include server partial file
 include_once ("../server/connection.php");
 
