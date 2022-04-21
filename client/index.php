@@ -30,8 +30,8 @@
         }
 
         //check if the user is guest
-        if(isset($_SESSION['username'])){
-            if($_SESSION['username'] == "admin" || $_SESSION['username'] == "regular"){
+        if(isset($_SESSION['access'])){
+            if($_SESSION['access'] == "admin" || $_SESSION['access'] == "regular"){
         ?>
         <!-- if not guest show add button -->
         <button  class="btn btn-primary btn-sm"  data-bs-toggle="modal" data-bs-target="#addStudentModal">Add New</button>
