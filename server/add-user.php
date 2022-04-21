@@ -8,9 +8,11 @@ $con = connection();
 //check if the submit button is clicked
 if(isset($_POST['signup'])){
 
-    if(isset($_POST['username']) && isset($_POST['password'])){
+    if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['conPassword'])){
         //get data from the form
         $username = $_POST['username'];
+        $password = $_POST['password'];
+        $conPassword = $_POST['conPassword'];
 
         $sqlCheckUser = "SELECT * FROM user WHERE username = '$username'";
         $user = $con->query($sqlCheckUser) or die ($con->error);
@@ -24,10 +26,13 @@ if(isset($_POST['signup'])){
                     Username is already taken!
                 </div>
             ';
+        }elseif($password != $conPassword){//check if password and confirm password match
+            $errorMsg = '
+                <div class="alert alert-warning" role="alert">
+                    Password and confirm password did not match!
+                </div>
+            ';
         }else{
-            //get data from the form
-            $password = $_POST['password'];
-
             $access = "regular";
 
             //query for inserting data into database

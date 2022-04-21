@@ -28,6 +28,11 @@
                             <input type="password" class="form-control" name="password" required>
                         </div>
 
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Confirm Password</span>
+                            <input type="password" class="form-control" name="conPassword" required>
+                        </div>
+
                         <?php if(isset($errorMsg)){ echo $errorMsg;}?>
                         
                         <button type="submit" class="btn btn-primary" name="signup">Submit</button>
