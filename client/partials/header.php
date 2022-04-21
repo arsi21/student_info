@@ -9,7 +9,7 @@
     <title>Student Information</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.php">StudentInfo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,14 +17,14 @@
             </button>
             
             <div class="collapse navbar-collapse d-flex-md justify-content-between" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
+                <div class="navbar-nav mt-3 mt-md-0 mt-lg-0">
                     <form class="d-flex pl-2" action="result.php" method="get">
                         <input class="form-control me-2" type="search" placeholder="Search" name="search">
                         <button class="btn btn-outline-light" type="submit" name="searchBtn">Search</button>
                     </form>
                 </div>
 
-                <div class="btn-group" role="group">
+                <div class="btn-group mt-2 mt-md-0 mt-lg-0" role="group">
                     <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         <?php //check if you already login
                         if(!isset($_SESSION)){
