@@ -68,12 +68,12 @@
 
                 <div class="mb-3">
                     <label for="lname-input" class="form-label">Last Name</label>
-                    <input id="lname-input" type="text" class="form-control" name="lname">
+                    <input id="lname-input" type="text" class="form-control" name="lname" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="gender-input" class="form-label">Gender</label>
-                        <select name="gender" id="gender-input"  class="form-select">
+                        <select name="gender" id="gender-input"  class="form-select" required>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                         </select>
@@ -81,12 +81,12 @@
 
                 <div class="mb-3">
                     <label for="grade-input" class="form-label">Grade Level</label>
-                    <input id="grade-input" type="number" class="form-control" name="grade">
+                    <input id="grade-input" type="number" class="form-control" name="grade" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="bday-input" class="form-label">Birhtday</label>
-                    <input id="bday-input" type="date" class="form-control" name="bday">
+                    <input id="bday-input" type="date" class="form-control" name="bday" required>
                 </div>
 
                 <!-- <input type="submit" name="submit" class="btn btn-primary" value="Add Student"> -->
