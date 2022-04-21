@@ -1,24 +1,8 @@
-<?php 
-
-// //check if you already login
-// if(!isset($_SESSION)){
-//     session_start();
-// }
-
-// if(isset($_SESSION['username'])){
-//     echo "Welcome ".$_SESSION['username'];
-// }else{
-//     echo "Welcome Guest";
-// }
-
-?>
-
 <!-- add server partials -->
 <?php include_once("../server/display.php")?>
 
 <!-- add client partials -->
 <?php include_once("partials/header.php")?>
-
 
     <div class="container">
         <h1 class="h3 my-3">Student List</h1>
@@ -46,7 +30,24 @@
         <table class="table table-hover">
             <thead>
                 <tr>
+
+                    <?php 
+                    //start session
+                    if(!isset($_SESSION)){
+                        session_start();
+                    }
+
+                    //check if the user is admin
+                    if(isset($_SESSION['access'])){
+                        if($_SESSION['access'] == "admin"){
+                    ?>
+                    <!-- if yes show action th -->
                     <th>Action</th>
+                    <?php
+                        }
+                    }
+                    ?>
+                    
                     <th>First Name</th>
                     <th>Last Name</th>
                 </tr>
@@ -56,7 +57,24 @@
         <?php //output data of each row
         while($row = $result->fetch_assoc()) {?>
                 <tr>
+
+                    <?php 
+                    //start session
+                    if(!isset($_SESSION)){
+                        session_start();
+                    }
+
+                    //check if the user is admin
+                    if(isset($_SESSION['access'])){
+                        if($_SESSION['access'] == "admin"){
+                    ?>
+                    <!-- if admin show view link for showing data -->
                     <td><a href="details.php?id=<?php echo $row['id']?>">view</a></td>
+                    <?php
+                        }
+                    }
+                    ?>
+                   
                     <td><?php echo $row['first_name']; ?></td>
                     <td><?php echo $row['last_name']; ?></td>
                 </tr>
@@ -79,7 +97,7 @@
             
                 <div class="mb-3">
                     <label for="fname-input" class="form-label">First Name</label>
-                    <input id="fname-input" type="text" class="form-control" name="fname">
+                    <input id="fname-input" type="text" class="form-control" name="fname" required>
                 </div>
 
                 <div class="mb-3">

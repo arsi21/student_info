@@ -31,7 +31,24 @@
         <table class="table table-hover">
             <thead>
                 <tr>
+
+                    <?php 
+                    //start session
+                    if(!isset($_SESSION)){
+                        session_start();
+                    }
+
+                    //check if the user is admin
+                    if(isset($_SESSION['access'])){
+                        if($_SESSION['access'] == "admin"){
+                    ?>
+                    <!-- if yes show action th -->
                     <th>Action</th>
+                    <?php
+                        }
+                    }
+                    ?>
+
                     <th>First Name</th>
                     <th>Last Name</th>
                 </tr>
@@ -41,7 +58,24 @@
         <?php //output data of each row
         while($row = $result->fetch_assoc()) {?>
                 <tr>
+
+                    <?php 
+                    //start session
+                    if(!isset($_SESSION)){
+                        session_start();
+                    }
+
+                    //check if the user is admin
+                    if(isset($_SESSION['access'])){
+                        if($_SESSION['access'] == "admin"){
+                    ?>
+                    <!-- if admin show view link for showing data -->
                     <td><a href="details.php?id=<?php echo $row['id']?>">view</a></td>
+                    <?php
+                        }
+                    }
+                    ?>
+
                     <td><?php echo $row['first_name']; ?></td>
                     <td><?php echo $row['last_name']; ?></td>
                 </tr>
